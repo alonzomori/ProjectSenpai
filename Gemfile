@@ -76,3 +76,4 @@ end
 # user added
 gem "ostruct"
 gem "ruby_llm"
+gem "faker"

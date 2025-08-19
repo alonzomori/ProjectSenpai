@@ -73,3 +73,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+# user added
+gem "ostruct"
+gem "ruby_llm"
+gem "faker"

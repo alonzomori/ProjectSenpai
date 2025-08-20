@@ -3,3 +3,7 @@
 @import "avatar";
 @import "form_legend_clear";
 @import "navbar";
+
+.hover-overlay:hover{
+  border: $blue solid 1px;
+}

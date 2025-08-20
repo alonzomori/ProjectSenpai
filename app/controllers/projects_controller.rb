@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   end
 
   def new
-    @project = Project.new
+    @project_new = Project.new
   end
 
   def create

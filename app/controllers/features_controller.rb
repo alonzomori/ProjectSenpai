@@ -1,5 +1,6 @@
 class FeaturesController < ApplicationController
-  def index
-    @features = Feature.all
+  def show
+    @feature = Feature.find(params[:id])
+    @message = Message.new
   end
 end

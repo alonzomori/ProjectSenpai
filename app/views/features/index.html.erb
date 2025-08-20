@@ -1,7 +1,15 @@
-<div class="container">
-<h1 class="text-center">Project Senpai</h1>
+<div class="container mt-5">
+<div class="row g-4 justify-content-center">
+<h1 class="text-left fw-bold">Features History</h1>
+<ul class="text-left list-unstyled">
 <% @features.each do |feature| %>
-<p class="text-center"> <%= feature.summary %> </p>
-<p class="text-center"> <%= feature.date_finished %> </p>
+<div>
+<li class="d-flex justify-content-between align-items-center mb-2">
+<p class="fw-bold mb-0"> <%= feature.summary %></p>
+<%= link_to "Chat", "#", class: "btn btn-primary" %></li>
+<li><p>Date Created: <%= feature.date_finished %> </p></li>
+</div>
 <% end %>
+</ul>
+</div>
 </div>

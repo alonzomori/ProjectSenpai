@@ -1,0 +1,6 @@
+<h1><%= @feature.name %></h1>
+<h2>What do you need help with?</h2>
+<%= simple_form_for [@feature, @message] do |f| %>
+  <%= f.input :content %>
+  <%= f.submit %>
+<% end %>

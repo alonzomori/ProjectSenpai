@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :projects, only: [:index, :new, :create] do
     resources :features, only: [:index, :new, :create]
   end
-  resources :features, only: [:show] do
+  resources :features, only: [:show, :update, :edit] do
     resources :messages, only: [:create]
   end
 end

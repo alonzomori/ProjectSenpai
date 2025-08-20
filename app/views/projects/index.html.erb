@@ -1,6 +1,7 @@
 <div class="container mt-5">
   <div class="row g-4 justify-content-center">
     <h1>Projects</h1>
+    <%= link_to "Create Project", new_project_path, class: "text-decoration-none btn btn-secondary text-light "  %>
     <% @projects.each do |project| %>
       <div class="col-md-6 col-lg-4 ">
         <%= link_to project_features_path(project), class: "text-decoration-none text-dark" do %>

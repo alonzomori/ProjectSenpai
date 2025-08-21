@@ -28,7 +28,7 @@ html, body {
 
 /* Hero spacing */
 section:first-of-type {
-  padding: clamp(2.5rem, 2.5rem + 3vw, 5rem) 0;
+  padding: clamp(2.5rem, calc(2.5rem + 3vw), 5rem) 0;
 }
 
 /* CTA buttons */
@@ -138,10 +138,10 @@ section:first-of-type {
 }
 
 /* 見出しの視認性と余白（モバイル最適） */
-h1.display-5 { font-size: clamp(2rem, 3.2vw + 1.6rem, 3.25rem); }
+h1.display-5 { font-size: clamp(2rem, calc(3.2vw + 1.6rem), 3.25rem); }
 
 /* 余白調整（スマホでの読みやすさ） */
-.lead { font-size: clamp(1rem, 0.5vw + 0.95rem, 1.25rem); }
+.lead { font-size: clamp(1rem, calc(0.5vw + 0.95rem), 1.25rem); }
 
 footer .logo-dot { width: 14px; height: 14px; }
 

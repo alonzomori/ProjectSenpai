@@ -7,7 +7,6 @@ class MessagesController < ApplicationController
 
     if @message.valid?
       @feature.with_instructions(@message.build_prompt).ask(@message.content)
-      redirect_to feature_path(@feature)
     else
       render :new
     end

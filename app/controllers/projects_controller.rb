@@ -11,6 +11,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     @project.user = current_user
     if @project.save
+      AiResponseProjectsService.new(@project).call
       redirect_to project_features_path(@project), notice: "Project was successfully created!"
     else
       render :new, status: :unprocessable_entity

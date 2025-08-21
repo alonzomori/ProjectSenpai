@@ -1,1 +1,153 @@
 // Specific CSS for your home-page
+:root {
+  --brand: #4B48F5; /* プライマリ */
+  --brand-deep: #322DF0; /* 濃いプライマリ */
+  --ink: #0e1333; /* 見出し色 */
+}
+
+html, body {
+  font-family: "Red Hat Display", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans JP", "Hiragino Kaku Gothic ProN",
+    "Yu Gothic", Meiryo, sans-serif;
+  color: var(--ink);
+  background: #ffffff;
+}
+
+.fw-800 { font-weight: 800; }
+.lh-tight { line-height: 1.1; }
+
+/* Navbar */
+.logo-dot {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #ff6a88, #f02aa6 60%, #6d4bff);
+  box-shadow: 0 4px 12px rgba(240, 42, 166, 0.35);
+}
+
+/* Hero spacing */
+section:first-of-type {
+  padding: clamp(2.5rem, 2.5rem + 3vw, 5rem) 0;
+}
+
+/* CTA buttons */
+.btn-primary {
+  background-color: var(--brand);
+  border-color: var(--brand);
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--brand-deep);
+  border-color: var(--brand-deep);
+}
+.btn-primary:active {
+  background-color: var(--brand-deep);
+  border-color: var(--brand-deep);
+  filter: brightness(0.98);
+}
+.btn-primary:disabled {
+  background-color: color-mix(in srgb, var(--brand) 50%, #bbb);
+  border-color: color-mix(in srgb, var(--brand) 50%, #bbb);
+}
+
+/* Login action */
+.login-action .btn {
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 6px 16px rgba(75, 72, 245, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.login-action .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(75, 72, 245, 0.35);
+}
+
+/* Hero illustration (カード風デザイン) */
+.illustration-card {
+  display: inline-block;
+  padding: 1rem;
+  border-radius: 1.25rem;
+  background: #fff;
+  box-shadow: 0 8px 28px rgba(28, 33, 66, 0.15);
+  max-width: 480px;
+}
+.illustration-card img {
+  border-radius: 1rem;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+@media (max-width: 768px) {
+  .illustration-card {
+    max-width: 320px;
+    padding: 0.75rem;
+  }
+}
+
+/* Features */
+.py-6 { padding-top: 4rem; padding-bottom: 4rem; }
+.feature {
+  border: 1px solid #eef0f5;
+  border-radius: 18px;
+  padding: 1.25rem 1.25rem 1rem;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(28, 33, 66, 0.04);
+  height: 100%;
+}
+.feature-icon {
+  width: 44px; height: 44px;
+  display: grid; place-items: center;
+  border-radius: 12px;
+  background: #f3f5ff;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem; /* 既存の絵文字サイズ（互換維持用） */
+}
+/* Bootstrap Icons のサイズ・色を統一 */
+.feature-icon i {
+  font-size: 2rem;        /* アイコンの見た目サイズ */
+  line-height: 1;
+  color: var(--brand);     /* ブランド色で統一 */
+}
+
+/* 背景の装飾（円） */
+.bg-ornament {
+  position: fixed;
+  z-index: -1;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  filter: blur(2px);
+  opacity: 0.6;
+  pointer-events: none;
+}
+.bg-ornament--tl {
+  top: -80px; left: -80px;
+  background: radial-gradient(circle at 30% 30%, #ff7aa2, #ff5470 60%, #ff3c5f);
+}
+.bg-ornament--tr {
+  top: -60px; right: -120px;
+  background: radial-gradient(circle at 70% 30%, #6b5bff, #3f2df4 60%, #2a1fd8);
+}
+.bg-ornament--br {
+  bottom: -80px; right: -60px;
+  background: radial-gradient(circle at 60% 40%, #ffb86b, #ff9a42 60%, #ff7a24);
+  width: 160px; height: 160px;
+  opacity: 0.5;
+}
+
+/* 見出しの視認性と余白（モバイル最適） */
+h1.display-5 { font-size: clamp(2rem, 3.2vw + 1.6rem, 3.25rem); }
+
+/* 余白調整（スマホでの読みやすさ） */
+.lead { font-size: clamp(1rem, 0.5vw + 0.95rem, 1.25rem); }
+
+footer .logo-dot { width: 14px; height: 14px; }
+
+input::placeholder { color: #a8aec3; }
+
+/* 低モーション環境へ配慮 */
+@media (prefers-reduced-motion: reduce) {
+  .login-action .btn { transition: none; }
+}

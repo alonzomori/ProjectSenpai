@@ -11,7 +11,11 @@ class Message < ApplicationRecord
     I am a beginner developer who wants to learn coding in a beginner-friendly environment.
 
     Dont give any answer but lead me guide me to it in a step by step instructions.
-    #{content}
+
+    Here is the project that I am working on:
+    Title- #{feature.project.name}
+    Description- #{feature.project.description}
+    This the specific feature that I am working on: #{feature.name}
     PROMPT
   end
 

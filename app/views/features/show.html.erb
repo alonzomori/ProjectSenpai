@@ -8,7 +8,7 @@
             <%= message.content %>
           </div>
         </div>
-      <% else %>
+      <% elsif message.role == "assistant" %>
         <div class="d-flex justify-content-start mb-3">
           <div class="bg-white border border-dark px-3 py-2 rounded-4">
             <%= message.content %>
@@ -17,16 +17,14 @@
       <% end %>
     <% end %>
   </div>
-  <% if @feature.messages %>
+  <% if @feature.messages.any? %>
     <h2>Ask another question</h2>
   <% else %>
     <h2>What do you need help with?</h2>
   <% end %>
   <%= simple_form_for [@feature, @message] do |f| %>
-    <div class="d-flex flex-row justify-content-between gap-3">
-      <div class="flex-fill">
-        <%= f.input :content, label: false %>
-      </div>
+    <div class="d-flex flex-row justify-content-between gap-3 mb-5">
+      <%= f.input :content, label: false, wrapper_html: { style: "margin: 0 !important", class: "w-100"} %>
       <%= f.submit "Message", class: "btn btn-primary" %>
     </div>
   <% end %>

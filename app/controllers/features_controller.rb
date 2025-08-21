@@ -1,7 +1,7 @@
 class FeaturesController < ApplicationController
   def index
     @project = Project.find(params[:project_id])
-    @features = @project.features
+    @features = @project.features.order(:created_at)
   end
 
   def show

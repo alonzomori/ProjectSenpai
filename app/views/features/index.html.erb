@@ -7,12 +7,16 @@
 <div>
 <li class="d-flex justify-content-between align-items-center mb-2">
 <p class="fw-bold mb-0"> <%= feature.summary %></p>
+<div class="d-flex justify-content-start">
+<p class="p-2"> <%= simple_form_for feature do |f| %>
+<%= f.input :completed, as: :check_boxes %></p>
 <%= link_to "Chat", feature_path(feature), class: "btn btn-primary" %></li>
 <li><p>Date Created: <%= feature.date_finished %> </p></li>
+</div>
 </div>
 <div>
 <hr class="border border-secondary border-3 opacity-75">
 <% end %>
+<% end  %>
 </ul>
-</div>
 </div>

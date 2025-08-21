@@ -6,9 +6,7 @@ class MessagesController < ApplicationController
     @message.feature = @feature
 
     if @message.valid?
-      @chat = RubyLLM.chat
-      response = @chat.with_instructions(@message.build_prompt).ask(@message.content)
-      Message.create(role: "assistant", content: response.content, feature: @feature)
+      @feature.with_instructions(@message.build_prompt).ask(@message.content)
       redirect_to feature_path(@feature)
     else
       render :new

@@ -3,7 +3,6 @@ class Message < ApplicationRecord
 
   belongs_to :feature
   validates :role, presence: true
-  validates :content, presence: true
 
   def build_prompt
     prompt = <<-PROMPT
@@ -14,5 +13,9 @@ class Message < ApplicationRecord
     Dont give any answer but lead me guide me to it in a step by step instructions.
     #{content}
     PROMPT
+  end
+
+  def chat
+    self.feature
   end
 end

@@ -1,14 +1,5 @@
 <div class="container">
   <h1><%= @feature.name %></h1>
-  <h2>What do you need help with?</h2>
-  <%= simple_form_for [@feature, @message] do |f| %>
-    <div class="d-flex flex-row justify-content-between gap-3">
-      <div class="flex-fill">
-        <%= f.input :content, label: false %>
-      </div>
-      <%= f.submit "Ask", class: "btn btn-primary" %>
-    </div>
-  <% end %>
   <div class="mt-3">
     <% @feature.messages.each do |message| %>
       <% if message.role == "user" %>
@@ -26,4 +17,17 @@
       <% end %>
     <% end %>
   </div>
+  <% if @feature.messages %>
+    <h2>Ask another question</h2>
+  <% else %>
+    <h2>What do you need help with?</h2>
+  <% end %>
+  <%= simple_form_for [@feature, @message] do |f| %>
+    <div class="d-flex flex-row justify-content-between gap-3">
+      <div class="flex-fill">
+        <%= f.input :content, label: false %>
+      </div>
+      <%= f.submit "Message", class: "btn btn-primary" %>
+    </div>
+  <% end %>
 </div>

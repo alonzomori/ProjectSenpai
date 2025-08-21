@@ -6,7 +6,9 @@ class MessagesController < ApplicationController
     @message.feature = @feature
 
     if @message.save
-      response = "Message was saved"
+      @chat = RubyLLM.chat
+      response = @chat.ask(@message.content)
+      Message.create(role: "assistant", content: response.content, feature: @feature)
       redirect_to feature_path(@feature)
     else
       render :new

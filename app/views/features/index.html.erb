@@ -2,7 +2,7 @@
   <div class="mb-4">
     <div class="d-flex flex-row justify-content-between">
       <h1 class="text-left fw-bold"><%= @project.name %></h1>
-      <%= link_to "Add feature", "#", class: "btn btn-primary align-self-center" %>
+      <%= link_to "Add feature", "#", class: "btn btn-dark align-self-center" %>
     </div>
     <p class="fw-bold mb-0"> <%= @features.find(params[:project_id]).summary %></p>
   </div>

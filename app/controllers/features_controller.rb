@@ -16,7 +16,7 @@ class FeaturesController < ApplicationController
   def update
     @feature = Feature.find(params[:id])
     if @feature.update(feature_params)
-      redirect_to @feature, notice: "Feature Completed!"
+      redirect_to project_features_path(@feature.project), notice: "Feature Completed!"
     else
       render :edit, status: unprocessable_entity
     end

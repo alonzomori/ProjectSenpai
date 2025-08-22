@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_08_18_091844) do
+ActiveRecord::Schema[7.1].define(version: 2025_08_21_074824) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,6 +21,9 @@ ActiveRecord::Schema[7.1].define(version: 2025_08_18_091844) do
     t.bigint "project_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "model_id"
+    t.boolean "column_type"
+    t.boolean "completed"
     t.index ["project_id"], name: "index_features_on_project_id"
   end
 
@@ -30,7 +33,12 @@ ActiveRecord::Schema[7.1].define(version: 2025_08_18_091844) do
     t.bigint "feature_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "model_id"
+    t.integer "input_tokens"
+    t.integer "output_tokens"
+    t.bigint "tool_call_id"
     t.index ["feature_id"], name: "index_messages_on_feature_id"
+    t.index ["tool_call_id"], name: "index_messages_on_tool_call_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -40,6 +48,17 @@ ActiveRecord::Schema[7.1].define(version: 2025_08_18_091844) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_projects_on_user_id"
+  end
+
+  create_table "tool_calls", force: :cascade do |t|
+    t.bigint "message_id", null: false
+    t.string "tool_call_id"
+    t.string "name"
+    t.jsonb "arguments"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["message_id"], name: "index_tool_calls_on_message_id"
+    t.index ["tool_call_id"], name: "index_tool_calls_on_tool_call_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -56,5 +75,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_08_18_091844) do
 
   add_foreign_key "features", "projects"
   add_foreign_key "messages", "features"
+  add_foreign_key "messages", "tool_calls"
   add_foreign_key "projects", "users"
+  add_foreign_key "tool_calls", "messages"
 end

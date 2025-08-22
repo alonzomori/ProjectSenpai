@@ -6,12 +6,28 @@
       <% @features.each do |feature| %>
         <div>
           <li class="d-flex justify-content-between align-items-center mb-2">
-            <p class="fw-bold mb-0"> <%= feature.name %></p>
+            <p class="fw-bold mb-0"> <%= feature.summary %></p>
             <%= link_to "Chat", feature_path(feature), class: "btn btn-primary" %></li>
+          <li>
+            <p>Date Created: <%= feature.date_finished %> </p>
+          </li>
         </div>
+        <h1><%= feature.name %></h1>
+        <% if feature.date_finished.blank? %>
+          <%= simple_form_for(feature) do |f| %>
+            <%= f.input_field :date_finished, as: :hidden, value: Date.today %>
+            <%= f.submit "Complete" %>
+          <% end %>
+        <% else %>
+          <%= simple_form_for(feature) do |f| %>
+            <%= f.input_field :date_finished, as: :hidden, value: nil %>
+            <%= f.submit "Completed" %>
+          <% end %>
+        <% end %>
         <div>
           <hr class="border border-secondary border-3 opacity-75">
-        <% end %>
-      </ul>
-    </div>
+        </div>
+      <% end %>
+    </ul>
   </div>
+</div>

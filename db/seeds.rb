@@ -21,55 +21,55 @@ User.create!(email: "richard@projectsenpai.com", password: "123456", password_co
 #   )
 # end
 
-puts "Creating projects..."
+# puts "Creating projects..."
 
-Project.create!(name: "Regex generator",
-description: "I want to make an app that will help to construct regex commands. I want to make a really useful UI that's easy for beginners",
-user: user)
+# Project.create!(name: "Regex generator",
+# description: "I want to make an app that will help to construct regex commands. I want to make a really useful UI that's easy for beginners",
+# user: user)
 
-Project.create!(name: "Solar panel power generation UI",
-description: "I want to make a website that will track the amount of power my solar panels are generating",
-user: user)
+# Project.create!(name: "Solar panel power generation UI",
+# description: "I want to make a website that will track the amount of power my solar panels are generating",
+# user: user)
 
-Project.create!(name: "Focus app",
-      description: "I want to make an app that will keep me from using my phone so much.",
-      user: user)
+# Project.create!(name: "Focus app",
+#       description: "I want to make an app that will keep me from using my phone so much.",
+#       user: user)
 
-      Project.create!(name: "Regex generator",
-description: "I want to make an app that will help to construct regex commands. I want to make a really useful UI that's easy for beginners",
-user: user)
+#       Project.create!(name: "Regex generator",
+# description: "I want to make an app that will help to construct regex commands. I want to make a really useful UI that's easy for beginners",
+# user: user)
 
-Project.create!(name: "Solar panel power generation UI",
-description: "I want to make a website that will track the amount of power my solar panels are generating",
-user: user)
+# Project.create!(name: "Solar panel power generation UI",
+# description: "I want to make a website that will track the amount of power my solar panels are generating",
+# user: user)
 
-Project.create!(name: "Focus app",
-      description: "I want to make an app that will keep me from using my phone so much.",
-      user: user)
+# Project.create!(name: "Focus app",
+#       description: "I want to make an app that will keep me from using my phone so much.",
+#       user: user)
 
-        Project.create!(name: "Regex generator",
-description: "I want to make an app that will help to construct regex commands. I want to make a really useful UI that's easy for beginners",
-user: user)
+#         Project.create!(name: "Regex generator",
+# description: "I want to make an app that will help to construct regex commands. I want to make a really useful UI that's easy for beginners",
+# user: user)
 
-Project.create!(name: "Solar panel power generation UI",
-description: "I want to make a website that will track the amount of power my solar panels are generating",
-user: user)
+# Project.create!(name: "Solar panel power generation UI",
+# description: "I want to make a website that will track the amount of power my solar panels are generating",
+# user: user)
 
-Project.create!(name: "Focus app",
-      description: "I want to make an app that will keep me from using my phone so much.",
-      user: user)
+# Project.create!(name: "Focus app",
+#       description: "I want to make an app that will keep me from using my phone so much.",
+#       user: user)
 
-        Project.create!(name: "Regex generator",
-description: "I want to make an app that will help to construct regex commands. I want to make a really useful UI that's easy for beginners",
-user: user)
+#         Project.create!(name: "Regex generator",
+# description: "I want to make an app that will help to construct regex commands. I want to make a really useful UI that's easy for beginners",
+# user: user)
 
-Project.create!(name: "Solar panel power generation UI",
-description: "I want to make a website that will track the amount of power my solar panels are generating",
-user: user)
+# Project.create!(name: "Solar panel power generation UI",
+# description: "I want to make a website that will track the amount of power my solar panels are generating",
+# user: user)
 
-Project.create!(name: "Focus app",
-      description: "I want to make an app that will keep me from using my phone so much.",
-      user: user)
+# Project.create!(name: "Focus app",
+#       description: "I want to make an app that will keep me from using my phone so much.",
+#       user: user)
 
 
 

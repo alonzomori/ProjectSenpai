@@ -1,7 +1,8 @@
 <% messages.each do |message| %>
   <% if message.role == "user" %>
     <div class="d-flex justify-content-end mb-2" data-controller="auto-scroll">
-      <div class="bg-dark text-white px-3 py-2 rounded-4">
+      <div class="bg-dark text-white you px-3 py-2 rounded-4" data-controller="event-listener" data-action="click->event-listener#disable"
+        data-event-listener-target="button">
         <%= message.content %>
       </div>
     </div>
@@ -13,3 +14,12 @@
     </div>
   <% end %>
 <% end %>
+<script>
+  document.querySelector(".you").addEventListener("click", you)
+
+  function you() {
+    console.log("Clicked!")
+    const audio = new Audio("/assets/you.mp3");
+    audio.play();
+  }
+</script>

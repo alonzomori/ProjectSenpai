@@ -22,6 +22,8 @@ ActiveRecord::Schema[7.1].define(version: 2025_08_21_074824) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "model_id"
+    t.boolean "column_type"
+    t.boolean "completed"
     t.index ["project_id"], name: "index_features_on_project_id"
   end
 

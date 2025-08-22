@@ -9,10 +9,6 @@ class FeaturesController < ApplicationController
     @message = Message.new
   end
 
-  def index
-    @features = Feature.all
-  end
-
   def edit
     @feature = Feature.find(params[:id])
   end
@@ -20,7 +16,7 @@ class FeaturesController < ApplicationController
   def update
     @feature = Feature.find(params[:id])
     if @feature.update(feature_params)
-      redirect_to @feature, notice: "Sorry, this feature cannot be displayed."
+      redirect_to @feature, notice: "Feature Completed!"
     else
       render :edit, status: unprocessable_entity
     end

@@ -28,7 +28,7 @@ html, body {
 
 /* Hero spacing */
 section:first-of-type {
-  padding: clamp(2.5rem, calc(2.5rem + 3vw), 5rem) 0;
+  padding: clamp(2.5rem, 2.5rem, 5rem) 0;
 }
 
 /* CTA buttons */

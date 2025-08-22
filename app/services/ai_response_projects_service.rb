@@ -3,12 +3,12 @@ class AiResponseProjectsService
     @project = project
    end
 
-   def call
-    response = RubyLLM.chat.ask(@project.build_prompt)
-    names = JSON.parse(response.content[8..-5])
-    names.each do |name|
+  def call
+        response = RubyLLM.chat.ask(@project.build_prompt)
+        names = JSON.parse(response.content[8..-5])
+        names.each do |name|
       feature = Feature.create(name: name, project: @project)
-    end
+  end
 
     # Project.create(name: @project.name, description: @project.description)
    end

@@ -11,12 +11,12 @@
       <% if feature.date_finished.blank? %>
         <%= simple_form_for(feature) do |f| %>
           <%= f.input_field :date_finished, as: :hidden, value: Date.today %>
-          <button type="submit" class=""><i class="fa-regular fa-square"></i></button>
+          <button type="submit" class="btn btn-transparent"><i class="fa-regular fa-square"></i></button>
         <% end %>
       <% else %>
         <%= simple_form_for(feature) do |f| %>
           <%= f.input_field :date_finished, as: :hidden, value: nil %>
-          <button type="submit">
+          <button type="submit" class="btn btn-transparent">
             <i class="fa-solid fa-square-check"></i>
           </button>
         <% end %>

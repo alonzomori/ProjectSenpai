@@ -37,7 +37,11 @@
         <span class="fw-bold fs-3">ProjectSenpai</span>
       </a>
       <div class="login-action">
-        <a href="login.html" class="btn btn-primary fw-semibold px-4 py-2">Login</a>
+        <% if current_user %>
+          <%= link_to "My Projects", projects_path, class:"btn btn-primary fw-semibold px-4 py-2" %>
+        <% else %>
+          <%= link_to "Log in", new_user_session_path, class: "btn btn-primary fw-semibold px-4 py-2"  %>
+        <% end %>
       </div>
     </div>
   </nav>
@@ -84,7 +88,6 @@
               <i class="bi bi-lightning-charge" aria-hidden="true"></i>
             </div>
             <h3 class="h5 fw-bold">Connect with people who share common challenges</h3>
-            <%# <p class="mb-0 text-secondary">xxxxxxxxxx</p> %>
           </div>
         </div>
         <div class="col-md-4">

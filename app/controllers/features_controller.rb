@@ -1,8 +1,7 @@
 class FeaturesController < ApplicationController
   def index
     @project = Project.find(params[:project_id])
-    @features = @project.features
-
+    @features = @project.features.order(:created_at)
   end
 
   def show
@@ -17,7 +16,7 @@ class FeaturesController < ApplicationController
   def update
     @feature = Feature.find(params[:id])
     if @feature.update(feature_params)
-      redirect_to @feature, notice: "Sorry, this feature cannot be displayed."
+      redirect_to project_features_path(@feature.project), notice: "Feature Completed!"
     else
       render :edit, status: unprocessable_entity
     end

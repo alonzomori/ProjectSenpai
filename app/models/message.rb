@@ -3,6 +3,7 @@ class Message < ApplicationRecord
 
   belongs_to :feature
   validates :role, presence: true
+  attr_accessor :input_tokens
 
   def build_prompt
     prompt = <<-PROMPT

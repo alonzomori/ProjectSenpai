@@ -1,8 +1,8 @@
 // Specific CSS for your home-page
 :root {
-  --brand: #4B48F5; /* プライマリ */
-  --brand-deep: #322DF0; /* 濃いプライマリ */
-  --ink: #0e1333; /* 見出し色 */
+  --brand: #4B48F5; /* Primary */
+  --brand-deep: #322DF0; /* rich primary */
+  --ink: #0e1333; /* heading color */
 }
 
 html, body {
@@ -63,7 +63,7 @@ section:first-of-type {
   box-shadow: 0 10px 20px rgba(75, 72, 245, 0.35);
 }
 
-/* Hero illustration (カード風デザイン) */
+/* Hero illustration (card-style design) */
 .illustration-card {
   display: inline-block;
   padding: 1rem;
@@ -102,16 +102,16 @@ section:first-of-type {
   border-radius: 12px;
   background: #f3f5ff;
   margin-bottom: 0.5rem;
-  font-size: 1.25rem; /* 既存の絵文字サイズ（互換維持用） */
+  font-size: 1.25rem; /* Existing emoji size (for compatibility) */
 }
-/* Bootstrap Icons のサイズ・色を統一 */
+/* Unify size and color of Bootstrap Icons */
 .feature-icon i {
-  font-size: 2rem;        /* アイコンの見た目サイズ */
+  font-size: 2rem;        /* Icon appearance size */
   line-height: 1;
-  color: var(--brand);     /* ブランド色で統一 */
+  color: var(--brand);     /* Unified brand colors */
 }
 
-/* 背景の装飾（円） */
+/* Background decoration (circle) */
 .bg-ornament {
   position: fixed;
   z-index: -1;
@@ -137,17 +137,17 @@ section:first-of-type {
   opacity: 0.5;
 }
 
-/* 見出しの視認性と余白（モバイル最適） */
+/* Headline visibility and margins (mobile optimization) */
 // h1.display-5 { font-size: clamp(2rem, 3.2vw + 1.6rem, 3.25rem); }
 
-/* 余白調整（スマホでの読みやすさ） */
+/* Margins adjustment (readability on smartphones) */
 // .lead { font-size: clamp(1rem, 0.5vw + 0.95rem, 1.25rem); }
 
 footer .logo-dot { width: 14px; height: 14px; }
 
 input::placeholder { color: #a8aec3; }
 
-/* 低モーション環境へ配慮 */
+/* Consideration for low-motion environments */
 @media (prefers-reduced-motion: reduce) {
   .login-action .btn { transition: none; }
 }

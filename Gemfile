@@ -75,5 +75,5 @@ group :test do
 end
 # user added
 gem "ostruct"
-gem "ruby_llm"
 gem "faker"
+gem "ruby_llm", git: 'https://github.com/SuzukiRyuichiro/ruby_llm.git'

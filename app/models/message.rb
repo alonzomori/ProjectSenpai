@@ -1,7 +1,8 @@
 class Message < ApplicationRecord
+  acts_as_message
+
   belongs_to :feature
   validates :role, presence: true
-  validates :content, presence: true
 
   def build_prompt
     prompt = <<-PROMPT
@@ -10,7 +11,15 @@ class Message < ApplicationRecord
     I am a beginner developer who wants to learn coding in a beginner-friendly environment.
 
     Dont give any answer but lead me guide me to it in a step by step instructions.
-    #{content}
+
+    Here is the project that I am working on:
+    Title- #{feature.project.name}
+    Description- #{feature.project.description}
+    This the specific feature that I am working on: #{feature.name}
     PROMPT
+  end
+
+  def chat
+    self.feature
   end
 end
